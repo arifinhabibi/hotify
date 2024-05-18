@@ -37,8 +37,8 @@ const ReviewSection = () => {
           ]}
         >
           <CarouselContent>
-            {users.slice(0, 4).map((user) => (
-              <CarouselItem>
+            {users.slice(0, 4).map((user, index) => (
+              <CarouselItem key={index}>
                 <div className="flex justify-center">
                   <Image
                     src={user.avatar}
