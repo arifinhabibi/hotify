@@ -11,23 +11,25 @@ import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Home() {
   return (
-    <main className="dark:bg-dark-background dark:text-white font-sans px-36">
-      {/* navbar */}
-      <Navbar />
-      {/* hero section */}
-      <HeroSection />
-      {/* discover section */}
-      <DiscoverSection />
-      {/* service section */}
-      <ServiceSection />
-      {/* benefit section */}
-      <BenefitSection />
-      {/* review section */}
-      <ReviewSection />
-      {/* footer */}
+    <div>
+      <main className="px-36 font-sans dark:bg-dark-background dark:text-white">
+        {/* navbar */}
+        <Navbar />
+        {/* hero section */}
+        <HeroSection />
+        {/* discover section */}
+        <DiscoverSection />
+        {/* service section */}
+        <ServiceSection />
+        {/* benefit section */}
+        <BenefitSection />
+        {/* review section */}
+        <ReviewSection />
+        {/* footer */}
+        {/* theme toggle */}
+        <ThemeToggle />
+      </main>
       <Footer />
-      {/* theme toggle */}
-      <ThemeToggle />
-    </main>
+    </div>
   );
 }

@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import { nextui } from "@nextui-org/react";
 
 const config: Config = {
   content: [
@@ -6,6 +7,7 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./public/**/*.html",
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   darkMode: "class",
   theme: {
@@ -23,7 +25,7 @@ const config: Config = {
         },
         BG: "#F2F6FC",
         primary: {
-          DEFAULT: "#00582F",
+          DEFAULT: "#00AA5B",
           "200": "#C5FFE4",
           "300": "#A0FFD3",
           "400": "#7BFFC2",
@@ -60,6 +62,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [nextui()],
 };
 export default config;

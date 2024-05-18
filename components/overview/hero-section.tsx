@@ -24,18 +24,18 @@ const HeroSection = () => {
   return (
     <div>
       {/* hero section - slug */}
-      <div className="flex justify-between items-center">
+      <div className="flex items-center justify-between">
         <div className="slug">
-          <h1 className="text-4xl font-sans font-bold">
+          <h1 className="font-sans text-4xl font-bold">
             Explore Your Dream <br /> Destinations with{" "}
             <span className="text-primary-800">Hotify</span>
           </h1>
-          <p className="text-xl py-5 text-neutral-600">
-            Your Journey Starts Here: Hotify's Premier Hotel <br /> Booking
+          <p className="py-5 text-xl text-neutral-600">
+            Your Journey Starts Here: Hotify{"'"}s Premier Hotel <br /> Booking
             Service
           </p>
           <div className="flex items-center gap-10">
-            <button className="flex items-center gap-2 bg-primary-800 p-4 text-white rounded-full">
+            <button className="flex items-center gap-2 rounded-full bg-primary-800 p-4 text-white">
               <ArrowDownTrayIcon width={24} />
               Download App
             </button>
@@ -46,11 +46,11 @@ const HeroSection = () => {
                   src={user.avatar}
                   width={40}
                   height={40}
-                  className="inline-block w-10 h-10 rounded-full"
+                  className="inline-block h-10 w-10 rounded-full"
                   alt={user.name}
                 />
               ))}
-              <div className="w-10 h-10 bg-primary-800 rounded-full flex items-center justify-center text-white">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-800 text-white">
                 <p>
                   {users.length}
                   {users.length > 999 ? "K" : ""}
@@ -58,21 +58,21 @@ const HeroSection = () => {
               </div>
             </div>
           </div>
-          <div className="flex items-center justify-between text-center py-20">
+          <div className="flex items-center justify-between py-20 text-center">
             <div>
-              <span className="font-bold text-4xl text-primary-800">2k</span>{" "}
+              <span className="text-4xl font-bold text-primary-800">2k</span>{" "}
               <br />
               <span className="text-neutral-600 dark:text-white">Rooms</span>
             </div>
             <div>
-              <span className="font-bold text-4xl text-primary-800">4k</span>{" "}
+              <span className="text-4xl font-bold text-primary-800">4k</span>{" "}
               <br />
               <span className="text-neutral-600 dark:text-white">
                 Happy Guest
               </span>
             </div>
             <div>
-              <span className="font-bold text-4xl text-primary-800">10k</span>{" "}
+              <span className="text-4xl font-bold text-primary-800">10k</span>{" "}
               <br />
               <span className="text-neutral-600 dark:text-white">
                 Memoriable Stays
@@ -90,14 +90,15 @@ const HeroSection = () => {
         </div>
       </div>
       {/* hero section - search feature */}
-      <div className="flex items-center justify-between bg-BG rounded-3xl dark:text-dark-background mb-10">
-        <div className="font-semibold px-8">
+      <div className="mb-10 flex items-center justify-between rounded-3xl bg-BG dark:text-dark-background">
+        <div className="px-8 font-semibold">
           <label
             htmlFor="location"
-            className="flex gap-3 items-center cursor-pointer">
+            className="flex cursor-pointer items-center gap-3"
+          >
             <MapPinIcon className="text-primary-800" width={24} /> Location
           </label>
-          <select id="location" className="bg-BG text-center mt-2">
+          <select id="location" className="mt-2 bg-BG text-center">
             <option defaultValue={""}>Choose a country</option>
             <option value="US">United States</option>
             <option value="CA">Canada</option>
@@ -106,30 +107,32 @@ const HeroSection = () => {
           </select>
         </div>
         <span className="text-3xl text-neutral-600">|</span>
-        <div className="font-semibold px-8">
+        <div className="px-8 font-semibold">
           <label
             htmlFor="checkin"
-            className="flex gap-3 items-center cursor-pointer">
+            className="flex cursor-pointer items-center gap-3"
+          >
             <CalendarIcon className="text-primary-800" width={24} /> Check In
           </label>
           <input
             type="date"
             name=""
-            className="bg-BG text-center mt-2"
+            className="mt-2 bg-BG text-center"
             id="checkin"
           />
         </div>
         <span className="text-3xl text-neutral-600">|</span>
-        <div className="font-semibold px-8">
+        <div className="px-8 font-semibold">
           <label
             htmlFor="checkout"
-            className="flex gap-3 items-center cursor-pointer">
+            className="flex cursor-pointer items-center gap-3"
+          >
             <CalendarIcon className="text-primary-800" width={24} /> Check out
           </label>
           <input
             type="date"
             name=""
-            className="bg-BG text-center mt-2"
+            className="mt-2 bg-BG text-center"
             id="checkout"
           />
         </div>
@@ -137,10 +140,11 @@ const HeroSection = () => {
         <div className="font-semibold">
           <label
             htmlFor="person"
-            className="flex gap-3 items-center cursor-pointer">
+            className="flex cursor-pointer items-center gap-3"
+          >
             <UserIcon className="text-primary-800" width={24} /> Person
           </label>
-          <select id="person" className="bg-BG text-center mt-2">
+          <select id="person" className="mt-2 bg-BG text-center">
             <option defaultValue={""}>Choose a Person</option>
             <option value="US">1</option>
             <option value="CA">2</option>
@@ -148,8 +152,8 @@ const HeroSection = () => {
             <option value="DE">4</option>
           </select>
         </div>
-        <div className="font-semibold rounded-r-3xl bg-primary-800 text-white">
-          <button className="flex gap-3 items-center py-6 px-8">
+        <div className="rounded-r-3xl bg-primary-800 font-semibold text-white">
+          <button className="flex items-center gap-3 px-8 py-6">
             <MagnifyingGlassIcon width={24} />
             Search
           </button>
