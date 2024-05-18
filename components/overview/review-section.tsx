@@ -28,7 +28,7 @@ const ReviewSection = () => {
       <p className="mt-5 text-xl text-neutral-600">
         Real Experiences, Real Stories, Real Satisfaction
       </p>
-      <div className="">
+      <div className="py-20">
         <Carousel
           plugins={[
             Autoplay({

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <div className="mt-10 flex justify-between gap-20 bg-primary-800 px-36 py-24">
+    <div className="flex justify-between gap-20 bg-primary-800 px-36 py-24">
       <div className="w-1/2">
         <Image
           src="/images/logo-light.png"

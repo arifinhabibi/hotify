@@ -34,7 +34,8 @@ const NavLinks = () => {
         <Link
           key={index}
           href={link.href}
-          className="px-6 text-neutral-1000 text-base font-semibold">
+          className="px-6 text-base font-semibold text-neutral-1000 dark:text-white"
+        >
           {link.name}
         </Link>
       ))}
