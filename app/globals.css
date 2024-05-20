@@ -2,16 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
-
-:root {
-  --primary-color: "#00AA5B"
-}
-
-
-
-@media screen and (max-width:768px) {
-  .slug {
-    border: 0%;
-  }
-
-}

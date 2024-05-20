@@ -28,14 +28,13 @@ const ReviewSection = () => {
       <p className="mt-5 text-xl text-neutral-600">
         Real Experiences, Real Stories, Real Satisfaction
       </p>
-      <div className="py-20">
+      <div className="px-10 py-20 tab:px-0">
         <Carousel
           plugins={[
             Autoplay({
               delay: 2000,
             }),
           ]}
-          className="px-0"
         >
           <CarouselContent>
             {users.slice(0, 4).map((user, index) => (
