@@ -12,7 +12,7 @@ import ThemeToggle from "@/components/ThemeToggle";
 export default function Home() {
   return (
     <div>
-      <main className="px-36 font-sans dark:bg-dark-background dark:text-white">
+      <main className="px-5 font-sans dark:bg-dark-background dark:text-white tab:px-36">
         {/* navbar */}
         <Navbar />
         {/* hero section */}

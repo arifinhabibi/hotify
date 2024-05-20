@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <div className="flex justify-between gap-20 bg-primary-800 px-36 py-24">
+    <div className="block justify-between gap-20 bg-primary-800 px-5 py-24 tab:flex tab:px-36">
       <div className="w-1/2">
         <Image
           src="/images/logo-light.png"
@@ -15,7 +15,7 @@ const Footer = () => {
           unparalleled travel experiences for travelers worldwide.
         </p>
       </div>
-      <div className="flex w-full justify-between capitalize text-white">
+      <div className="block w-full justify-between capitalize text-white tab:flex">
         <div>
           <h4 className="my-3 text-lg font-semibold">Navigation</h4>
           <ul className="">

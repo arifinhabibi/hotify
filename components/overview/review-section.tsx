@@ -35,6 +35,7 @@ const ReviewSection = () => {
               delay: 2000,
             }),
           ]}
+          className="px-0"
         >
           <CarouselContent>
             {users.slice(0, 4).map((user, index) => (

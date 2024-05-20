@@ -8,12 +8,10 @@
 }
 
 
-.slug {
-  background-image: url('/images/cover-slug.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  padding: 50px 40px;
-  border-radius: 0% 0% 100% 0%;
+
+@media screen and (max-width:768px) {
+  .slug {
+    border: 0%;
+  }
+
 }

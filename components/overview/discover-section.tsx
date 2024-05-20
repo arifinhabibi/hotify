@@ -10,6 +10,7 @@ const DiscoverSection = () => {
         width={460}
         height={422}
         alt="artist-1"
+        className="laptop:block hidden"
       />
       <div className="px-10 text-start">
         <h5 className="font-semibold text-primary-800">#DiscoverYourStay</h5>

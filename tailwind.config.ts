@@ -12,6 +12,9 @@ const config: Config = {
   darkMode: "class",
   theme: {
     extend: {
+      backgroundImage: {
+        "hero-section": "url('/images/cover-slug.png')",
+      },
       colors: {
         light: {
           background: "#ffffff",
@@ -52,6 +55,7 @@ const config: Config = {
       screens: {
         mobile: "640px",
         tab: "768px",
+        laptop: "1024px",
       },
       fontFamily: {
         // Define custom font families

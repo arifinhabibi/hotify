@@ -1,6 +1,8 @@
+"use client";
+
 import {
   ArrowDownTrayIcon,
-  CalendarIcon,
+  // CalendarIcon,
   MagnifyingGlassIcon,
   MapPinIcon,
   UserIcon,
@@ -8,8 +10,32 @@ import {
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+
+import { format } from "date-fns";
+import { Calendar as CalendarIcon } from "lucide-react";
+
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { Calendar } from "@/components/ui/calendar";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+
 const HeroSection = () => {
   const [users, setUsers] = useState<any[]>([]);
+  const [date, setDate] = useState<Date>();
+  const [checkOut, setCheckout] = useState<Date>();
 
   useEffect(() => {
     async function fetchData() {
@@ -24,8 +50,8 @@ const HeroSection = () => {
   return (
     <div>
       {/* hero section - slug */}
-      <div className="flex items-center justify-between">
-        <div className="slug">
+      <div className="flex items-center justify-between py-10">
+        <div className="bg-hero-section rounded-none bg-cover bg-fixed bg-center bg-no-repeat px-12 py-10 mobile:px-2 tab:rounded-br-full">
           <h1 className="font-sans text-4xl font-bold">
             Explore Your Dream <br /> Destinations with{" "}
             <span className="text-primary-800">Hotify</span>
@@ -35,7 +61,7 @@ const HeroSection = () => {
             Service
           </p>
           <div className="flex items-center gap-10">
-            <button className="flex items-center gap-2 rounded-full bg-primary-800 p-4 text-white">
+            <button className="mobile:text-md flex items-center gap-2 rounded-full bg-primary-800 p-4 text-xs text-white">
               <ArrowDownTrayIcon width={24} />
               Download App
             </button>
@@ -80,7 +106,7 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
-        <div className="">
+        <div className="hidden mobile:block">
           <Image
             src={"/images/gallery.png"}
             width={481}
@@ -90,69 +116,121 @@ const HeroSection = () => {
         </div>
       </div>
       {/* hero section - search feature */}
-      <div className="mb-10 flex items-center justify-between rounded-3xl bg-BG dark:text-dark-background">
-        <div className="px-8 font-semibold">
-          <label
-            htmlFor="location"
-            className="flex cursor-pointer items-center gap-3"
-          >
-            <MapPinIcon className="text-primary-800" width={24} /> Location
-          </label>
-          <select id="location" className="mt-2 bg-BG text-center">
-            <option defaultValue={""}>Choose a country</option>
-            <option value="US">United States</option>
-            <option value="CA">Canada</option>
-            <option value="FR">France</option>
-            <option value="DE">Germany</option>
-          </select>
+      <div className="mb-10 block items-center justify-between rounded-3xl bg-BG dark:text-dark-background tab:flex tab:text-center">
+        <div className="block items-center justify-between py-10 tab:flex tab:py-0">
+          <div className="px-8 py-4 font-semibold tab:py-0">
+            <label
+              htmlFor="location"
+              className="flex cursor-pointer items-center gap-3"
+            >
+              <MapPinIcon className="text-primary-800" width={24} /> Location
+            </label>
+            <Select>
+              <SelectTrigger className=" border-none bg-BG text-center outline-none focus:ring-BG">
+                <SelectValue placeholder="Choose a country" />
+              </SelectTrigger>
+              <SelectContent className="bg-BG">
+                <SelectGroup>
+                  <SelectLabel>Indonesia</SelectLabel>
+                  <SelectItem value="singapore">Singapore</SelectItem>
+                  <SelectItem value="thai">Thailand</SelectItem>
+                  <SelectItem value="malaysia">Malaysia</SelectItem>
+                </SelectGroup>
+              </SelectContent>
+            </Select>
+          </div>
+          <span className="hidden text-3xl text-neutral-600 tab:block">|</span>
+          <div className="px-8 py-4 font-semibold tab:py-0">
+            <label
+              htmlFor="checkin"
+              className="flex cursor-pointer items-center gap-3"
+            >
+              <CalendarIcon className="text-primary-800" width={24} /> Check In
+            </label>
+            <Popover>
+              <PopoverTrigger asChild>
+                <Button
+                  variant={"outline"}
+                  className={cn(
+                    "justify-start border-none bg-BG text-left font-normal",
+                    !date && "text-muted-foreground",
+                  )}
+                >
+                  <CalendarIcon className="mr-2 h-4 w-4" />
+                  {date ? format(date, "PPP") : <span>Pick a date</span>}
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent className="w-auto bg-BG p-0">
+                <Calendar
+                  mode="single"
+                  selected={date}
+                  onSelect={setDate}
+                  initialFocus
+                  className="bg-BG"
+                />
+              </PopoverContent>
+            </Popover>
+          </div>
+          <span className="hidden text-3xl text-neutral-600 tab:block">|</span>
+          <div className="px-8 py-4 font-semibold tab:py-0">
+            <label
+              htmlFor="checkout"
+              className="flex cursor-pointer items-center gap-3"
+            >
+              <CalendarIcon className="text-primary-800" width={24} /> Check out
+            </label>
+            <Popover>
+              <PopoverTrigger asChild>
+                <Button
+                  variant={"outline"}
+                  className={cn(
+                    "justify-start border-none bg-BG text-left font-normal",
+                    !checkOut && "text-muted-foreground",
+                  )}
+                >
+                  <CalendarIcon className="mr-2 h-4 w-4" />
+                  {checkOut ? (
+                    format(checkOut, "PPP")
+                  ) : (
+                    <span>Pick a checkOut</span>
+                  )}
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent className="w-auto p-0">
+                <Calendar
+                  mode="single"
+                  selected={checkOut}
+                  onSelect={setCheckout}
+                  initialFocus
+                  className="bg-BG"
+                />
+              </PopoverContent>
+            </Popover>
+          </div>
+          <span className="hidden text-3xl text-neutral-600 tab:block">|</span>
+          <div className="px-8 py-4 font-semibold tab:py-0">
+            <label
+              htmlFor="person"
+              className="flex cursor-pointer items-center gap-3"
+            >
+              <UserIcon className="text-primary-800" width={24} /> Person
+            </label>
+            <Select>
+              <SelectTrigger className=" border-none bg-BG text-center outline-none focus:ring-BG">
+                <SelectValue placeholder="Choose how much" />
+              </SelectTrigger>
+              <SelectContent className="bg-BG">
+                <SelectGroup>
+                  <SelectLabel>1</SelectLabel>
+                  <SelectItem value="2">2</SelectItem>
+                  <SelectItem value="3">3</SelectItem>
+                  <SelectItem value="4">4</SelectItem>
+                </SelectGroup>
+              </SelectContent>
+            </Select>
+          </div>
         </div>
-        <span className="text-3xl text-neutral-600">|</span>
-        <div className="px-8 font-semibold">
-          <label
-            htmlFor="checkin"
-            className="flex cursor-pointer items-center gap-3"
-          >
-            <CalendarIcon className="text-primary-800" width={24} /> Check In
-          </label>
-          <input
-            type="date"
-            name=""
-            className="mt-2 bg-BG text-center"
-            id="checkin"
-          />
-        </div>
-        <span className="text-3xl text-neutral-600">|</span>
-        <div className="px-8 font-semibold">
-          <label
-            htmlFor="checkout"
-            className="flex cursor-pointer items-center gap-3"
-          >
-            <CalendarIcon className="text-primary-800" width={24} /> Check out
-          </label>
-          <input
-            type="date"
-            name=""
-            className="mt-2 bg-BG text-center"
-            id="checkout"
-          />
-        </div>
-        <span className="text-3xl text-neutral-600">|</span>
-        <div className="font-semibold">
-          <label
-            htmlFor="person"
-            className="flex cursor-pointer items-center gap-3"
-          >
-            <UserIcon className="text-primary-800" width={24} /> Person
-          </label>
-          <select id="person" className="mt-2 bg-BG text-center">
-            <option defaultValue={""}>Choose a Person</option>
-            <option value="US">1</option>
-            <option value="CA">2</option>
-            <option value="FR">3</option>
-            <option value="DE">4</option>
-          </select>
-        </div>
-        <div className="rounded-r-3xl bg-primary-800 font-semibold text-white">
+        <div className="rounded-3xl bg-primary-800 font-semibold text-white tab:rounded-l-none tab:rounded-r-3xl">
           <button className="flex items-center gap-3 px-8 py-6">
             <MagnifyingGlassIcon width={24} />
             Search
@@ -163,7 +241,7 @@ const HeroSection = () => {
           width={113}
           height={113}
           alt="arrow"
-          className="absolute right-0 mb-24"
+          className="absolute right-0 mb-24 hidden mobile:block"
         />
       </div>
     </div>

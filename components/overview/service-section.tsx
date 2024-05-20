@@ -8,13 +8,13 @@ import Image from "next/image";
 
 const ServiceSection = () => {
   return (
-    <div className="my-24 flex items-center justify-between gap-24">
+    <div className="my-24 block items-center justify-between gap-24 tab:flex">
       <Image
         src={"/images/attribute-1.png"}
         alt="attribute"
         width={54}
         height={169}
-        className="absolute left-10 mb-96"
+        className="absolute right-4 mb-96 tab:left-10"
       />
       <div className="w-1/2">
         <h5 className="font-semibold text-primary-800">
@@ -28,7 +28,7 @@ const ServiceSection = () => {
           tailored to your needs. Here{"'"}s how Hotify makes it happen:
         </p>
       </div>
-      <div>
+      <div className="mt-10 tab:mt-0">
         <ul>
           <li className="my-4 flex gap-3">
             <HandThumbUpIcon
@@ -93,7 +93,7 @@ const ServiceSection = () => {
         alt="attribute-3"
         width={153}
         height={48}
-        className="absolute right-0 mt-96"
+        className="absolute right-0 mt-0 tab:mt-96"
       />
     </div>
   );

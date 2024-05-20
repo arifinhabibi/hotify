@@ -34,6 +34,7 @@ const BenefitSection = () => {
         alt="attribute-2"
         width={463}
         height={609}
+        className="hidden tab:block"
       />
       <div>
         <h5 className="font-semibold text-primary-800">
