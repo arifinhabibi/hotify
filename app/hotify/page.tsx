@@ -1,12 +1,12 @@
 "use client";
 
-import BenefitSection from "@/components/overview/benefit-section";
-import DiscoverSection from "@/components/overview/discover-section";
-import Footer from "@/components/overview/footer";
-import HeroSection from "@/components/overview/hero-section";
-import Navbar from "@/components/overview/navbar";
-import ReviewSection from "@/components/overview/review-section";
-import ServiceSection from "@/components/overview/service-section";
+import BenefitSection from "@/components/hotify/benefit-section";
+import DiscoverSection from "@/components/hotify/discover-section";
+import Footer from "@/components/hotify/footer";
+import HeroSection from "@/components/hotify/hero-section";
+import Navbar from "@/components/hotify/navbar";
+import ReviewSection from "@/components/hotify/review-section";
+import ServiceSection from "@/components/hotify/service-section";
 import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Home() {
@@ -25,10 +25,10 @@ export default function Home() {
         <BenefitSection />
         {/* review section */}
         <ReviewSection />
-        {/* footer */}
         {/* theme toggle */}
         <ThemeToggle />
       </main>
+      {/* footer */}
       <Footer />
     </div>
   );

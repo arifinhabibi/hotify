@@ -77,7 +77,7 @@ const NavLinks = () => {
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
               {links.map((link, index) => (
-                <DropdownMenuItem className="cursor-pointer">
+                <DropdownMenuItem className="cursor-pointer" key={index}>
                   <Link key={index} href={link.href} className="">
                     {link.name}
                   </Link>

@@ -40,7 +40,6 @@ const HeroSection = () => {
   useEffect(() => {
     async function fetchData() {
       const response = await fetch("data.json");
-      console.log(response);
       const jsonData = await response.json();
       setUsers(jsonData);
     }
