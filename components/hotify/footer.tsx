@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -32,6 +33,24 @@ const Footer = () => {
             Hotify Inc. <br /> Address: 123 Main Street, City <br /> Email:
             info@hotify.com <br /> Phone: 1-800-HOTIFY
           </p>
+          <ul className="py-2">
+            <li className="my-1">
+              <Link
+                className=" text-white"
+                href={"https://www.linkedin.com/in/arifinhabibi/"}
+              >
+                Develop By arifin habibi
+              </Link>
+            </li>
+            <li className="my-1">
+              <Link
+                className=" text-white"
+                href={"https://www.linkedin.com/in/syahrul-awaludin/"}
+              >
+                Design By syahrul awaludin
+              </Link>
+            </li>
+          </ul>
         </div>
         <div>
           <h4 className="my-3 text-lg font-semibold">Download Hotify App</h4>
