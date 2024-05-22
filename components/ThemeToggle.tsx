@@ -1,8 +1,6 @@
 "use client";
 
 import { Switch } from "@/components/ui/switch";
-import { MoonIcon } from "@heroicons/react/24/outline";
-import { SwitchThumb } from "@radix-ui/react-switch";
 import { useEffect, useState } from "react";
 
 const ThemeToggle = () => {
@@ -41,8 +39,8 @@ const ThemeToggle = () => {
     <div className="fixed bottom-10 right-3">
       <Switch
         onCheckedChange={toggleTheme}
-        defaultChecked={localStorage.getItem("theme") != "light" ? true : false}
-        checked={localStorage.getItem("theme") != "light" ? true : false}
+        defaultChecked={theme != "light" ? true : false}
+        checked={theme != "light" ? true : false}
       ></Switch>
     </div>
   );
