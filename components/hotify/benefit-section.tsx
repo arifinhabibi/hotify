@@ -2,7 +2,12 @@
 
 import Image from "next/image";
 import React, { useState } from "react";
-import { Accordion, AccordionItem } from "@nextui-org/react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const BenefitSection = () => {
   const contents = [
@@ -45,18 +50,19 @@ const BenefitSection = () => {
           Enjoy Incredible Benefits and Rewards Every Time You Book Through
           Hotify Benefit List:
         </p>
-        <Accordion className="my-10 w-full text-white" isCompact>
+        <Accordion type="single" collapsible className="my-10 w-full">
           {contents.map((content, index) => (
             <AccordionItem
+              value={`item-${index}`}
               key={index}
-              className="rounded-xl px-5 py-4 text-xl text-neutral-600 hover:bg-primary-800 hover:text-white"
-              title={
-                <div className="text-2xl font-semibold text-neutral-900  outline-none selection:text-white">
-                  {content.title}
-                </div>
-              }
+              className="rounded-md px-5 hover:bg-primary-800 hover:text-white"
             >
-              {content.content}
+              <AccordionTrigger className="text-xl font-semibold hover:no-underline">
+                {content.title}
+              </AccordionTrigger>
+              <AccordionContent className="text-lg">
+                {content.content}
+              </AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>
