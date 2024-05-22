@@ -4,13 +4,13 @@ import Image from "next/image";
 
 const DiscoverSection = () => {
   return (
-    <div className="flex py-10">
+    <div className="flex py-8 tab:py-10">
       <Image
         src={"/images/artis-1.png"}
         width={460}
         height={422}
         alt="artist-1"
-        className="laptop:block hidden"
+        className="hidden laptop:block"
       />
       <div className="px-10 text-start">
         <h5 className="font-semibold text-primary-800">#DiscoverYourStay</h5>

@@ -26,22 +26,22 @@ const NavLinks = () => {
     },
     {
       name: "Discover",
-      href: "/discover",
+      href: "/",
       icon: "HomeIcon",
     },
     {
       name: "Service",
-      href: "/service",
+      href: "/",
       icon: "HomeIcon",
     },
     {
       name: "Benefit",
-      href: "/benefit",
+      href: "/",
       icon: "HomeIcon",
     },
     {
       name: "Review",
-      href: "/review",
+      href: "/",
       icon: "HomeIcon",
     },
   ];
@@ -59,7 +59,7 @@ const NavLinks = () => {
             </Link>
           ))}
         </div>
-        <button className="flex gap-2 rounded-full border-4 border-primary-800 p-2 text-primary-800">
+        <button className="flex gap-2 rounded-full border-4 border-primary-800 p-2 text-primary-800 outline-none">
           <EnvelopeIcon width={24} />
           Contact Us
         </button>

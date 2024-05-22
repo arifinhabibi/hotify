@@ -28,7 +28,7 @@ const ReviewSection = () => {
       <p className="mt-5 text-xl text-neutral-600">
         Real Experiences, Real Stories, Real Satisfaction
       </p>
-      <div className="px-10 py-20 tab:px-0">
+      <div className="px-10 py-10 tab:px-0">
         <Carousel
           plugins={[
             Autoplay({
@@ -44,7 +44,7 @@ const ReviewSection = () => {
                     src={user.avatar}
                     width={100}
                     height={100}
-                    className="my-24 h-28 w-28 rounded-full bg-BG"
+                    className="my-10 h-28 w-28 rounded-full bg-BG"
                     alt={user.name}
                   />
                 </div>

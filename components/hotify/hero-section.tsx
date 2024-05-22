@@ -49,8 +49,8 @@ const HeroSection = () => {
   return (
     <div>
       {/* hero section - slug */}
-      <div className="flex items-center justify-between py-10">
-        <div className="bg-hero-section rounded-none bg-cover bg-fixed bg-center bg-no-repeat px-12 py-10 mobile:px-2 tab:rounded-br-full">
+      <div className="flex items-center justify-between py-8 tab:py-0">
+        <div className="rounded-none bg-hero-section bg-cover bg-fixed bg-center bg-no-repeat px-8 py-8 tab:rounded-br-full tab:px-12 tab:py-10">
           <h1 className="font-sans text-4xl font-bold">
             Explore Your Dream <br /> Destinations with{" "}
             <span className="text-primary-800">Hotify</span>
@@ -60,8 +60,8 @@ const HeroSection = () => {
             Service
           </p>
           <div className="flex items-center gap-10">
-            <button className="mobile:text-md flex items-center gap-2 rounded-full bg-primary-800 p-4 text-xs text-white">
-              <ArrowDownTrayIcon width={24} />
+            <button className="mobile:text-md flex items-center gap-2 rounded-full bg-primary-800 p-2 text-xs text-white tab:p-4">
+              <ArrowDownTrayIcon width={24} className="w-5 tab:w-6" />
               Download App
             </button>
             <div className="flex -space-x-5 overflow-hidden">
@@ -71,11 +71,11 @@ const HeroSection = () => {
                   src={user.avatar}
                   width={40}
                   height={40}
-                  className="inline-block h-10 w-10 rounded-full"
+                  className="inline-block h-8 w-8 rounded-full tab:h-10 tab:w-10"
                   alt={user.name}
                 />
               ))}
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-800 text-white">
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary-800 text-white tab:h-10 tab:w-10">
                 <p>
                   {users.length}
                   {users.length > 999 ? "K" : ""}
@@ -83,7 +83,7 @@ const HeroSection = () => {
               </div>
             </div>
           </div>
-          <div className="flex items-center justify-between py-20 text-center">
+          <div className="flex items-center justify-between py-10 text-center tab:py-20">
             <div>
               <span className="text-4xl font-bold text-primary-800">2k</span>{" "}
               <br />
